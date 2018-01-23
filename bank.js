@@ -45,4 +45,16 @@ Bank.prototype.totalValueByType = function(findType){
   return totalAccountValue;
 };
 
+Bank.prototype.largestAccount = function(){
+  var accountCheck = this.accounts[0];
+
+  for(account of this.accounts){
+      if (account.balance > accountCheck.balance){
+        accountCheck = account;
+      }
+    }
+    return accountCheck;
+  }
+
+
 module.exports = Bank;

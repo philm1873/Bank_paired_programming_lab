@@ -69,4 +69,15 @@ describe('Bank', function(){
   })
 
 
+  it('Can get largest account', function(){
+    accountOne.deposit(100);
+    accountTwo.deposit(120);
+    accountThree.deposit(140);
+    bank.addAccount(accountOne);
+    bank.addAccount(accountTwo);
+    bank.addAccount(accountThree);
+    assert.strictEqual(bank.largestAccount(), accountThree);
+  })
+
+
 })
